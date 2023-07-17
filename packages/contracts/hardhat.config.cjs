@@ -1,9 +1,8 @@
-import { HardhatUserConfig } from "hardhat/config";
+require("@matterlabs/hardhat-zksync-deploy")
+require("@matterlabs/hardhat-zksync-solc")
+require("@matterlabs/hardhat-zksync-verify");
 
-import "@matterlabs/hardhat-zksync-deploy";
-import "@matterlabs/hardhat-zksync-solc";
-
-import "@matterlabs/hardhat-zksync-verify";
+require('hardhat-abi-exporter');
 
 // dynamically changes endpoints for local tests
 const zkSyncTestnet =
@@ -22,7 +21,7 @@ const zkSyncTestnet =
           "https://zksync2-testnet-explorer.zksync.dev/contract_verification",
       };
 
-const config: HardhatUserConfig = {
+const config = {
   zksolc: {
     version: "latest",
     settings: {},
@@ -37,6 +36,12 @@ const config: HardhatUserConfig = {
   solidity: {
     version: "0.8.17",
   },
+  abiExporter: {
+    path: './abi',
+    runOnCompile: true,
+    clear: true,
+    flat: true,
+  }  
 };
 
-export default config;
+exports.default = config;
