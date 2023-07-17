@@ -1,1 +1,1 @@
-export { default as GreeterABI } from '../abi/Greeter.json'
+export { default as GreeterAbi } from '../abi/Greeter.json';
