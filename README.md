@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://era.zksync.io"><img alt="zkSync Era Scaffold" src="https://raw.githubusercontent.com/0xrhsmt/scaffold-era/main/docs/assets/icon.png" width=320></a>
+  <a href="https://era.zksync.io"><img alt="zkSync Era Scaffold" src="https://raw.githubusercontent.com/0xrhsmt/scaffold-era/main/docs/assets/icon.png" width=160></a>
   <br />
   <br />
 </div>
@@ -17,10 +17,10 @@ This starter is a great choice for any of the following groups:
 
 ### Install Node and pnpm
 
-Install Node.js. [See here](https://nodejs.org/en/download/).
+Install Node.js. [See here](https://nodejs.org/en/download/).<br>
 Note that you need Node.js at a later version than 18 and above.
 
-Install pnpm. [See here](https://pnpm.io/installation/).
+Install pnpm. [See here](https://pnpm.io/installation/).<br>
 Note that you need pnpm at a later version than 8 and above.
 
 
@@ -49,9 +49,9 @@ Note that you need pnpm at a later version than 8 and above.
 
 4. Open [localhost:3000](http://localhost:3000) in your browser.
 
-  ```sh
-  open http://localhost:3000
-  ```
+   ```sh
+   open http://localhost:3000
+   ```
 
 ## Generate ABIs & React Hooks
 
@@ -82,7 +82,7 @@ pnpm exec wagmi generate
 You can now deploy your contract!
 
 ```sh
-cd packages/contracts
+cd ./packages/contracts
 pnpm run deploy
 ```
 
