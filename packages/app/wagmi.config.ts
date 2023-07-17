@@ -1,10 +1,12 @@
 import { defineConfig } from '@wagmi/cli'
 import { hardhat, react } from '@wagmi/cli/plugins'
+import deployments from '@/configs/deployments';
 
 export default defineConfig({
-  out: 'libs/contracts/generated.ts',
+  out: 'src/hooks/wagmi/generated.ts',
   plugins: [
     hardhat({
+      deployments,
       commands: {
         clean: 'pnpm hardhat clean',
         build: 'pnpm hardhat compile',
