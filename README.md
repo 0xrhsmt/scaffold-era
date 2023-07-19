@@ -11,7 +11,6 @@ After the BUIDLera Hackathon has ended, changes have been made to this repositor
 
 https://github.com/0xrhsmt/scaffold-era/tree/hackathon-submission
 
-
 ## Live Demo
 
 https://scaffold-app-omega.vercel.app/
@@ -55,49 +54,96 @@ Note that you need pnpm at a later version than 8 and above.
    pnpm install
    ```
 
-3. Start the frontend with `pnpm run dev`
+3. copy .env.example and edit .env
+
+   ```sh
+   cd packages/app
+   cp .env.example .env
+   <!-- edit .env -->
+   ```
+
+4. Start the frontend with `pnpm run dev`
 
    ```sh
    pnpm run dev
    ```
 
-4. Open [localhost:3000](http://localhost:3000) in your browser.
+5. Open [localhost:3000](http://localhost:3000) in your browser.
 
    ```sh
    open http://localhost:3000
    ```
 
-## Generate ABIs & React Hooks
+## local development
+
+### Run local Hardhat node and deploy contracts
 
 This project includes the `@wagmi/cli` by default, allowing you to create wagmi-compatible (type safe) ABIs & React Hooks directly from your terminal.
 
 To produce these ABIs & Hooks, follow the procedures below.
 
-## Generate code
+1. run hardhat node
 
-To generate ABIs for your contracts from your Hardhat project (in `./packages/contracts`), you can run:
+   ```sh
+   cd packages/app
+   pnpm run node:local
+   ```
 
-```sh
-cd ./packages/contracts
-pnpm run build
-```
+2. Deploy contracts
 
-This will compile your contracts.
+   ```sh
+   pnpm run build
+   pnpm run deploy:local
+   ```
 
-Next, to generate React Hooks from your app project (in `./packages/app`), you can run:
+3. Deploy contracts
 
-```sh
-cd ./packages/app
-pnpm exec wagmi generate
-```
+   ```sh
+   cd packages/app
 
-## Deploy contract to zkSyncTestnet
+   <!-- Add the contract address to wagmi.config.ts -->
+
+   pnpm exec wagmi generate
+   ```
+
+### Run app
+
+1. Start the frontend with `pnpm run dev`
+
+   ```sh
+   cd packages/app
+   pnpm run dev
+   ```
+
+## Deployments
+
+### Deploy Contracts
 
 You can now deploy your contract!
 
 ```sh
-cd ./packages/contracts
+cd packages/contracts
+
+cp .env.example .env
+<!-- edit .env -->
+
+pnpm run build
 pnpm run deploy
+
+cd ../app
+
+<!-- Add the contract address to wagmi.config.ts -->
+pnpm exec wagmi generate
+```
+
+### Deploy to Vercel
+
+```sh
+cd packages/app
+
+pnpm exec vercel
+pnpm exec vercel env add
+pnpm exec vercel redeploy $DEPLOYMENT_URL
 ```
 
 ## Learn more
