@@ -85,7 +85,7 @@ To produce these ABIs & Hooks, follow the procedures below.
 1. run hardhat node
 
    ```sh
-   cd packages/app
+   cd packages/contracts
    pnpm run node:local
    ```
 
@@ -101,7 +101,7 @@ To produce these ABIs & Hooks, follow the procedures below.
    ```sh
    cd packages/app
 
-   <!-- Add the contract address to wagmi.config.ts -->
+   <!-- Add the contract address to packages/app/src/configs/deployments.ts -->
 
    pnpm exec wagmi generate
    ```
@@ -132,7 +132,7 @@ pnpm run deploy
 
 cd ../app
 
-<!-- Add the contract address to wagmi.config.ts -->
+<!-- Add the contract address to packages/app/src/configs/deployments.ts -->
 pnpm exec wagmi generate
 ```
 
