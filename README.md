@@ -6,6 +6,11 @@
 
 This is a [zkSync Era](https://era.zksync.io/docs/) + [wagmi](https://wagmi.sh) + [RainbowKit](https://www.rainbowkit.com/) + [Hardhat](https://hardhat.org/) + [NextJs](https://nextjs.org/docs) project.
 
+## ⚠️ Note
+After the BUIDLera Hackathon has ended, changes have been made to this repository. If you want to refer to the state of the repository at the time the hackathon ended, please refer to the following branch.
+
+https://github.com/0xrhsmt/scaffold-era/tree/hackathon-submission
+
 ## Who is this for?
 
 This starter is a great choice for any of the following groups:
