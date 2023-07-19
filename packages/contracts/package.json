@@ -30,6 +30,5 @@
     "build": "pnpm build:sol && pnpm build:ts",
     "build:ts": "tsc",
     "build:sol": "npx hardhat compile"
-  },
-  "type": "module"
+  }
 }
