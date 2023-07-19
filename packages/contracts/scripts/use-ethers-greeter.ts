@@ -1,8 +1,10 @@
 import { ethers } from "hardhat";
 
+const GREETER_ADDRESS = '0x5FbDB2315678afecb367f032d93F642f64180aa3'
+
 async function main() {
   const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.attach("0x5FbDB2315678afecb367f032d93F642f64180aa3");
+  const greeter = await Greeter.attach(GREETER_ADDRESS);
 
   // Read message from contract
   console.log(`The message is ${await greeter.greet()}`);

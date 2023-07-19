@@ -2,7 +2,9 @@ import { ethers } from "hardhat";
 
 async function main() {
   const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("hello");
+
+  const greeting = "Hi there!";
+  const greeter = await Greeter.deploy(greeting);
 
   await greeter.deployed();
 

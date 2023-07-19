@@ -1,7 +1,7 @@
-import { zkSyncTestnet, localhost } from 'wagmi/chains';
+import { zkSyncTestnet, hardhat } from 'wagmi/chains';
 
 export const supportChainsMap = {
   zkSyncTestnet,
-  localhost
+  hardhat
 }
 export const supportChains = Object.values(supportChainsMap);

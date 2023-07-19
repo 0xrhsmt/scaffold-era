@@ -1,3 +1,5 @@
+import { HardhatUserConfig } from "hardhat/config";
+
 import "@matterlabs/hardhat-zksync-deploy"
 import "@matterlabs/hardhat-zksync-solc"
 import "@matterlabs/hardhat-zksync-verify"
@@ -21,7 +23,7 @@ const zkSyncTestnet =
         "https://zksync2-testnet-explorer.zksync.dev/contract_verification",
     };
 
-const config = {
+const config: HardhatUserConfig = {
   zksolc: {
     version: "latest",
     settings: {},
