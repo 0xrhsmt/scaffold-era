@@ -1,25 +1,25 @@
-require("@matterlabs/hardhat-zksync-deploy")
-require("@matterlabs/hardhat-zksync-solc")
-require("@matterlabs/hardhat-zksync-verify");
-
-require('hardhat-abi-exporter');
+import "@matterlabs/hardhat-zksync-deploy"
+import "@matterlabs/hardhat-zksync-solc"
+import "@matterlabs/hardhat-zksync-verify"
+import "@nomiclabs/hardhat-ethers"
+import "hardhat-abi-exporter"
 
 // dynamically changes endpoints for local tests
 const zkSyncTestnet =
   process.env.NODE_ENV == "test"
     ? {
-        url: "http://localhost:3050",
-        ethNetwork: "http://localhost:8545",
-        zksync: true,
-      }
+      url: "http://localhost:3050",
+      ethNetwork: "http://localhost:8545",
+      zksync: true,
+    }
     : {
-        url: "https://zksync2-testnet.zksync.dev",
-        ethNetwork: "goerli",
-        zksync: true,
-        // contract verification endpoint
-        verifyURL:
-          "https://zksync2-testnet-explorer.zksync.dev/contract_verification",
-      };
+      url: "https://zksync2-testnet.zksync.dev",
+      ethNetwork: "goerli",
+      zksync: true,
+      // contract verification endpoint
+      verifyURL:
+        "https://zksync2-testnet-explorer.zksync.dev/contract_verification",
+    };
 
 const config = {
   zksolc: {
@@ -28,6 +28,9 @@ const config = {
   },
   defaultNetwork: "zkSyncTestnet",
   networks: {
+    localhost: {
+      zksync: false,
+    },
     hardhat: {
       zksync: false,
     },
@@ -41,7 +44,7 @@ const config = {
     runOnCompile: true,
     clear: true,
     flat: true,
-  }  
+  }
 };
 
 exports.default = config;
