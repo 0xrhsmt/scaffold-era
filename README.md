@@ -138,6 +138,8 @@ pnpm exec wagmi generate
 
 ### Deploy to Vercel
 
+use vercel cli: https://vercel.com/docs/cli
+
 ```sh
 cd packages/app
 
