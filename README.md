@@ -11,6 +11,15 @@ After the BUIDLera Hackathon has ended, changes have been made to this repositor
 
 https://github.com/0xrhsmt/scaffold-era/tree/hackathon-submission
 
+
+## Live Demo
+
+https://scaffold-app-omega.vercel.app/
+
+## Demo Video
+
+https://www.youtube.com/watch?v=GSAQHerLtTg
+
 ## Who is this for?
 
 This starter is a great choice for any of the following groups:
